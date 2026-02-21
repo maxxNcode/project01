@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Single HTML Website</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 15px 30px;
+        }
+        .logo-holder{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+        .logo-img{
+            height: 40px;
+            width: 40px;
+            background: gray;
+            border-radius: 6px;
+            
+        }
+        .links{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+        .links a{
+            text-decoration: none;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body style="padding: 0 30px 0 30px;">
+    <nav>
+        <div class="logo-holder">
+            <div class="logo-img"></div>
+            <div class="logo-text"><h3>My Website</h3></div>
+        </div>
+
+        <div class="links">
+            <a href="">Home</a>
+            <p>/</p>
+            <a href="">Projects</a>
+            <p>/</p>
+            <a href="">Articles</a>
+            <p>/</p>
+            <a href="">Contact</a>
+        </div>
+    </nav>
+</body>
+</html>

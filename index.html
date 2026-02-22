@@ -185,6 +185,12 @@
             height: 100vh;
             width: 100%;
         }
+        .text-xl {
+            font-size: 1.5rem;
+            color: currentColor;
+            letter-spacing: 0.06em;
+            line-height: 1.35;
+        }
     </style>
 </head>
 <body>
@@ -258,7 +264,7 @@
 
                     <p>Courses I took:</p>
 
-                    <p>
+                    <p class="text">
                         - Object Oriented Programming <br>
                         - Data Structures and Algorithms <br>
                         - Web Engineering <br>
@@ -274,7 +280,12 @@
         </section>
 
         <section class="reviews-section" id="reviews-section">
-
+            <div class="large centered grid square-grid">
+                <p class="text-xl">
+                    All-in-one text splitter<br>
+                    テキストスプリッター
+                </p>
+            </div>
         </section>
     </main>
 
@@ -283,6 +294,9 @@
 
     <!-- ScrollTrigger Plugin (for scroll-based animations) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
@@ -339,6 +353,24 @@
                 }
             });
         });
+
+        const { words, chars } = anime.splitText('.reviews-section p', {
+            words: { wrap: 'clip' },
+            chars: true,
+        });
+
+        anime.createTimeline({
+            loop: true,
+            defaults: { ease: 'inOut(3)', duration: 650 }
+        })
+        .add(words, {
+            y: [$el => +$el.dataset.line % 2 ? '100%' : '-100%', '0%'],
+        }, anime.stagger(125))
+        .add(chars, {
+            y: $el => +$el.dataset.line % 2 ? '100%' : '-100%',
+        }, anime.stagger(10, { from: 'random' }))
+        .init();
+
     </script>
 </body>
 </html>

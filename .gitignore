@@ -1,0 +1,14 @@
+# node_modules
+node_modules/
+# build
+build/
+# dist
+dist/
+# coverage
+coverage/
+# temp
+temp/
+# logs
+logs/
+# .env
+.env
